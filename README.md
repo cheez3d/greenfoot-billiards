@@ -31,7 +31,7 @@ Prin intermediul acestui proiect am explorat capabilitățile [Greenfoot][greenf
 ## Generarea _asset_-urilor
 Toate _asset_-urile jocului sunt create în cod, în directorul [images][images] al proiectului neexistând imagini prefabricate. Astfel, se pot modifica programatic diverse caracteristici ale obiectelor jocului cum ar fi dimensiunile mesei, dimensiunile bilelor, lungimea tacului etc. printr-o simplă apelare a unei funcții corespunzătoare (e.g. `setWidth`, `setHeight`, `setRadius`).
 
-Două elemente mai interesante de subliniat în ceea ce privește _asset_-urile jocului sunt bilele cu texturi ce creează un efect de tridimensionalitate a acestora (vezi [clasa TexBall][texball-java]) și umbrele (vezi [clasa Glow][glow-java]), aceste două elemente creând un aspect grafic mai plăcut.
+Două elemente mai interesante de subliniat în ceea ce privește _asset_-urile jocului sunt bilele cu texturi ce creează un efect de tridimensionalitate a acestora (vezi clasa [`TexBall`][texball-java]) și umbrele (vezi clasa [`Glow`][glow-java]), aceste două elemente creând un aspect grafic mai plăcut.
 
 ## Sferizarea texturilor bilelor
 Pentru realizarea efectului de tridimensionalitate a bilelor s-au folosit ecuațiile următoare, pentru convertirea coordonatelor texturilor la [coordonate sferice][spherical-coordinates]:
@@ -45,17 +45,17 @@ Astfel, pe o altă imagine se desenează rezultatul sferizat al imaginii de mai 
 
 ![ball]
 
-Pentru rotirea texturilor atunci când bilele se află în mișcare s-au folosit [cuaternioni] (vezi [clasa Quaternion][quaternion-java]).
+Pentru rotirea texturilor atunci când bilele se află în mișcare s-au folosit [cuaternioni] (vezi clasa [`Quaternion`][quaternion-java]).
 
 
 ## Generarea umbrelor
 Generarea umbrelor se face cu ajutorul bibliotecii externe [JH Labs Java Image Filters][jh-labs-java-image-filters], folosindu-se un filtru de tip `BoxBlurFilter`.
 
-Umbrele poti fi de tip `INNER` (vezi [Pocket][pocket-java], [Table][table-java]) sau `OUTER` (vezi [Ball][ball-java], [Cue][cue-java]):
+Umbrele poti fi de tip `INNER` (vezi [`Pocket`][pocket-java], [`Table`][table-java]) sau `OUTER` (vezi [`Ball`][ball-java], [`Cue`][cue-java]):
 
 ![glow-types]
 
-Efectul de umbră este creat prin construirea unui contur pentru forma obiectului, contur peste care se aplică filtrul de _blur_ cu 3 iterații pentru a crea un efect de _auroră_ în jurul sau în interiorul obiectului, în funcție de tipul umbrei. Culoarea umbrei poate fi schimbată (vezi `setColor` în clasa [Glow][glow-java]).
+Efectul de umbră este creat prin construirea unui contur pentru forma obiectului, contur peste care se aplică filtrul de _blur_ cu 3 iterații pentru a crea un efect de _auroră_ în jurul sau în interiorul obiectului, în funcție de tipul umbrei. Culoarea umbrei poate fi schimbată (vezi `setColor` în clasa [`Glow`][glow-java]).
 
 ## Fizica
 Proiectul se folosește de un mic _physics engine_, referit în codul sursă ca `Physics2`, pentru tot ceea ce înseamnă detecarea și rezolvarea coliziunilor dintre obiecte.
